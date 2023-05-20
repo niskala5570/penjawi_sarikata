@@ -120,7 +120,7 @@ for file in os.listdir(folder_kamus):
 
 padanan_tanda = {"?": "؟", ";": "⁏", ",": "⹁", ".": "."}
 padanan_tanggaman_akhiran = {"lah": "له", "kah": "که", "nya": "ڽ", "kan": "کن", "i": "ي", "ku": "کو", "mu": "مو"}
-padanan_tanggaman_awalan = {"ber": "س", "mem": "س", "se": "س", "tak": "تق", "per": "ڤر"}
+padanan_tanggaman_awalan = {"ber": "بر", "mem": "س", "se": "س", "tak": "تق", "per": "ڤر"}
 
 select_translation = True
 
