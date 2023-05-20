@@ -148,3 +148,7 @@ for fail, tidak_teralih in files_untranslated.items():
     for line_num, dialog_words in dialog_lines.items():
         print(f"Baris {line_num}: {dialog_words}")
     print()
+
+print(
+    "Perlu diingatkan bahawa tidak semua perkataan berimbuhan dapat dialihkan dan perlu ditambah sendiri di dalam kamus.\n\nKata sendi seperti \"di\" \"ke\" dan \"se\" dalam jawi dieja rapat.\nRAPATKAN SENDIRI, JANGAN TAK RAPATKAN"
+)
