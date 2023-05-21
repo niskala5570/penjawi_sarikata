@@ -46,6 +46,13 @@ def alih_ayat(ayat, translations, padanan_tanda):
 
     return ayat_diterjemah
 
+def baiki_ejaan(teks):
+    # Cari dan ganti 'د ' dan 'ک ' yang berjarak untuk membetulkan perkataan cthnya 'د سکوله'
+    teks = re.sub(r'\bد\s', 'د', teks)
+    teks = re.sub(r'\bک\s', 'ک', teks)
+
+    return teks
+
 def alih_kata_sarikata(file_path, translations, padanan_tanda, padanan_tanggaman_akhiran, padanan_tanggaman_awalan):
     sarikata = pysubs2.load(file_path)
     tidak_teralih = {}
@@ -63,7 +70,7 @@ def alih_kata_sarikata(file_path, translations, padanan_tanda, padanan_tanggaman
             extracted_content[placeholder] = '{' + extract + '}'
             teks_dialog = teks_dialog.replace('{' + extract + '}', placeholder)
 
-        dialog_terjemah = alih_ayat(teks_dialog, translations, padanan_tanda)
+        dialog_terjemah = baiki_ejaan(alih_ayat(teks_dialog, translations, padanan_tanda))
         dialog_terjemah = "{\\fe-1}" + dialog_terjemah
 
         for placeholder, content in extracted_content.items():
@@ -106,7 +113,7 @@ for file in os.listdir(folder_kamus):
 
 padanan_tanda = {"?": "؟", ";": "⁏", ",": "⹁", ".": "."}
 padanan_tanggaman_akhiran = {"lah": "له", "kah": "که", "nya": "ڽ", "kan": "کن", "i": "ي", "ku": "کو", "mu": "مو"}
-padanan_tanggaman_awalan = {"ber": "بر", "mem": "س", "se": "س", "tak": "تق", "per": "ڤر"}
+padanan_tanggaman_awalan = {"ber": "بر", "mem": "مم", "meng": "مڠ", "se": "س", "tak": "تق", "per": "ڤر"}
 
 files_untranslated = {}
 
@@ -122,9 +129,9 @@ for fail, tidak_teralih in files_untranslated.items():
     print(f"Perkataan yang tidak teralih dalam \"{fail}\":")
     for i, dialog_index in enumerate(tidak_teralih):
         dialog = files_untranslated[fail][dialog_index]
-        print(f"Dialog {dialog_index + 1}: {dialog}")
+        print(f"Baris {dialog_index + 1}: {dialog}")
     print()
 
 print(
-    "Perlu diingatkan bahawa tidak semua perkataan berimbuhan dapat dialihkan dan perlu ditambah sendiri di dalam kamus.\n\nKata sendi seperti \"di\" \"ke\" dan \"se\" dalam jawi dieja rapat.\nRAPATKAN SENDIRI, JANGAN TAK RAPATKAN"
+    "Pengalih tulisan ini tidaklah sempurna, sentuhan manusia tetap juga diperlukan."
 )
