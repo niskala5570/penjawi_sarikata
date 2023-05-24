@@ -52,7 +52,7 @@ def alih_ayat(ayat, translations, padanan_tanda, chosen_translations):
 
     ayat_diterjemah = re.sub(r'(?<!\\)(\\[Nnh])', r' {\1} ', ayat)
 
-    ayat_diterjemah = re.sub(r'(?<!{){[^}]+}|[A-Za-z]+', lambda padanan: alih_kata(padanan, translations, chosen_translations, ayat), ayat_diterjemah)
+    ayat_diterjemah = re.sub(r'(?<!{){[^}]+}|[A-Za-z-]+', lambda padanan: alih_kata(padanan, translations, chosen_translations, ayat), ayat_diterjemah)
     ayat_diterjemah = re.sub(r'[?,;,.]', gantikan_tanda, ayat_diterjemah)
 
     ayat_diterjemah = ayat_diterjemah.replace('{\\N}', '\\N').replace('{\\n}', '\\n').replace('{\\h}', '\\h')
@@ -92,7 +92,7 @@ def alih_kata_sarikata(file_path, translations, padanan_tanda, padanan_tanggaman
 
         dialog.text = dialog_terjemah
 
-        katan_rumi_jawi = re.findall(r'(?<!{)(?<!\\)(?:\\\\)*(?<!\\[Nnh])\b[A-Za-z]+(?<!\\)(?!})(?<!\\[Nnh])', teks_dialog)
+        katan_rumi_jawi = re.findall(r'(?<!{)(?<!\\)(?:\\\\)*(?<!\\[Nnh])\b[A-Za-z-]+(?<!\\)(?!})(?<!\\[Nnh])', teks_dialog)
         for katan in katan_rumi_jawi:
             if katan.lower() not in translations and not re.search(r'(?<!\\){[^}]+}', teks_dialog):
                 katan_terjemah = alih_kata(re.search(katan, teks_dialog), translations, chosen_translations, teks_dialog)
@@ -101,15 +101,23 @@ def alih_kata_sarikata(file_path, translations, padanan_tanda, padanan_tanggaman
                         if katan.lower().endswith(tanggaman_akhiran):
                             katan_terjemah = alih_kata(re.search(katan[:-len(tanggaman_akhiran)], teks_dialog), translations, chosen_translations, teks_dialog) + padanan_tanggaman_akhiran[tanggaman_akhiran]
                             break
-                if katan_terjemah == katan:
-                    for tanggaman_awalan in padanan_tanggaman_awalan:
-                        if katan.lower().startswith(tanggaman_awalan):
-                            katan_terjemah = padanan_tanggaman_awalan[tanggaman_awalan] + alih_kata(re.search(katan[len(tanggaman_awalan):], teks_dialog), translations, chosen_translations, teks_dialog)
-                            break
+                    if katan_terjemah == katan:
+                        for tanggaman_awalan in padanan_tanggaman_awalan:
+                            if katan.lower().startswith(tanggaman_awalan):
+                                katan_terjemah = padanan_tanggaman_awalan[tanggaman_awalan] + alih_kata(re.search(katan[len(tanggaman_awalan):], teks_dialog), translations, chosen_translations, teks_dialog)
+                                break
                 if katan_terjemah != katan:
                     dialog_terjemah = dialog_terjemah.replace(katan, katan_terjemah)
                 else:
-                    tidak_teralih.append((i, katan))  # Store the index and untranslated word
+                    # Check for compound words with hyphens
+                    if '-' in katan:
+                        compound_words = katan.split('-')
+                        compound_translations = [translations.get(word.lower(), word) for word in compound_words]
+                        if all(word in translations for word in compound_words):
+                            katan_terjemah = '-'.join(compound_translations)
+                            dialog_terjemah = dialog_terjemah.replace(katan, katan_terjemah)
+                    else:
+                        tidak_teralih.append((i, katan))  # Store the index and untranslated word
 
         sarikata.events[i].text = dialog_terjemah
 
@@ -117,6 +125,7 @@ def alih_kata_sarikata(file_path, translations, padanan_tanda, padanan_tanggaman
     sarikata.save(laluan_sarikata)
 
     return len(tidak_teralih), tidak_teralih
+
 
 katan_kamus = {}
 
