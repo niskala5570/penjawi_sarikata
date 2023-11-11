@@ -11,19 +11,25 @@ import re
 folder_masuk = "Masuk"
 folder_keluar = "Keluar"
 folder_kamus = "Kamus"
+gaya_dikecualikan = ["Lagu", "EDR", "OPR"] #Ulasan telah dikecualikan secara lalai
 
 def muatKamus(file_path):
-    data = {}
-    with open(file_path) as file:
-        lines = file.readlines()
-        for line in lines:
-            rumi, jawi = line.strip().split("\t")
-            rumi = rumi.lower()
-            if rumi in data:
-                data[rumi].append(jawi)
-            else:
-                data[rumi] = [jawi]
-    return data
+  data = {}
+  with open(file_path) as file:
+      lines = file.readlines()
+      for line in lines:
+          columns = line.strip().split("\t")
+          if len(columns) >= 2:
+              rumi, jawi = columns[:2]  # Use the first two columns
+              rumi = rumi.lower()
+              if rumi in data:
+                  data[rumi].append(jawi)
+              else:
+                  data[rumi] = [jawi]
+          else:
+              print(f"Ignoring invalid line: {line}")
+  
+  return data
 
 def alihKata(padanan, translations, chosen_translations, context):
     katan = padanan.group(0)
@@ -76,7 +82,7 @@ def alihKata_Sarikata(file_path, translations, padanan_tanda, padanan_tanggaman_
     extracted_content = {}  # Dictionary to store extracted content within {}
 
     for i, dialog in enumerate(sarikata.events):
-        if dialog.is_comment:
+        if dialog.is_comment or dialog.style in gaya_dikecualikan:
             continue
 
         teks_dialog = dialog.text
