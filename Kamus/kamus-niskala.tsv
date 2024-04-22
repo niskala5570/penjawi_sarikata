@@ -1,29 +1,35 @@
 rumi	jawi	jawi_niskala
+-bahasa	-بهاس	
+-chan	-چن	
+-sama	-ساما	
 a	أي	
-adobe	ايدوبي	 ايدۆبي
+a-apa	ا-اڤ	
+adobe	ايدوبي	 ايدوٚبي
 adudu	ادودو	
 aira	اٴيرا	
 airaha	اٴيراها	
 airaha	اࢨراها	
 aisha	عائشة	
+aishia	اٴيشيا	
+aishia	عيشيا	
 aishia	عائشة	
 aisya	عائشة	
-aishia	عائشة	
 ajarkannya	اجرکنڽ	
 ajax	اجيک‌س	
-ajax	ايجيک‌س	اێجێک‌س
+ajax	ايجيک‌س	ايٚجيٚک‌س
 akatsuki	اکاتسوکي	
 ali	علي	
 alice	اليس	
+alice	ايليس	
 amakawa	اماکاوا	
-amane	اماني	امانێ
+amane	اماني	امانيٚ
 amato	اماتو	
 amazeey	اميزي	
 android	اندروٴيد	
-anemo	انيمو	انێمۆ
-anime	انيمي	انيمێ
-anisotropic	انيسوترڤيک	انيسۆترۆڤيک
-anisotropik	انيسوترڤيک	انيسۆترۆڤيک
+anemo	انيمو	انيٚموٚ
+anime	انيمي	انيميٚ
+anisotropic	انيسوترڤيک	انيسوٚتروٚڤيک
+anisotropik	انيسوترڤيک	انيسوٚتروٚڤيک
 anya	اڽا	
 apakah	اڤاکه	
 apple	ايڤل	
@@ -42,52 +48,51 @@ bart	بارت
 basalt	باسل‌ت	
 bedrock	بيدروک	
 begitulah	بݢيتوله	
-beltram	بيلترم	بێلترم
-beltrum	بيلترم	بێلترم
-bennett	بينيت	بێنّێت
+beltram	بيلترم	بيٚلترم
+beltrum	بيلترم	بيٚلترم
+bennett	بينيت	بيٚنّيٚت
 betulkah	بتولکه	
 birch	برچ	
-blocks	بلوک‌س	بلۆک‌س
+blocks	بلوک‌س	بلوٚک‌س
 blue	بلو	
-bluet	بلوٴيت	بلۆٴێت
+bluet	بلوٴيت	بلوٚٴيٚت
 boboiboy	بوبويبوي	
-bocchi	بوچي	بۆچّي
+bocchi	بوچي	بوٚچّي
 bochi	بوچي	
 boci	بوچي	
 boolean	بوليئن	
-boreas	بورياس	بۆرياس
-boruto	بوروتو	بۆروتۆ
+boreas	بورياس	بوٚرياس
+boruto	بوروتو	بوٚروتوٚ
 brown	براٴون	
 bruh	بره	
 bruh	بروه	
 c	سي	
-celia	سيليا	سێليا
+celia	سيليا	سيٚليا
 cepatlah	چڤتله	
-chainsaw	چينسو	چێنسۆ
+chainsaw	چينسو	چيٚنسوٚ
 chan	چن	
--chan	-چن	
 chicken	چيکن	
 christina	کريستينا	
-claire	کلير	کلێر
+claire	کلير	کليٚر
 cornflower	کورنفلاور	
 creeper	کريڤر	
 crowdin	کراٴودين	
 curseforge	کرس‌فورج	
-cyno	ساٴينو	ساٴينۆ
+cyno	ساٴينو	ساٴينوٚ
 d	دي	
 damian	داميان	
 davinci	داۏينچي	
-debian	ديبيان	دێبيان
-dedoldia	ديدولديا	دێدۆلديا
+debian	ديبيان	ديٚبيان
+dedoldia	ديدولديا	ديٚدوٚلديا
 deep	ديڤ	
-dendro	ديندرو	دێندرۆ
-desmond	ديسموند	دێسمۆند
-discord	ديسکورد	ديسکۆرد
+dendro	ديندرو	ديٚندروٚ
+desmond	ديسموند	ديٚسموٚند
+discord	ديسکورد	ديسکوٚرد
 dr	د.ر.	
 dungeons	دنجن‌س	دنجنٓ‌س
 e	إي	
-edna	ايدنا	اێدنا
-ei	ٴي	ٴێ
+edna	ايدنا	ايٚدنا
+ei	ٴي	ٴيٚ
 ei	ࢨ	ࢨٚ
 electro	ايليکترو	
 eleina	ايريئينا	
@@ -98,6 +103,7 @@ enderman	ٴيندرمين
 endermite	ٴيندرماٴيت	
 endo	ايندو	
 eris	ايريس	
+eris-sama	ايريس-ساما	
 ern	ٴرن	
 estelle	ايستيل	
 exponent	ايکسڤونن	
@@ -156,6 +162,7 @@ itaru	ايتارو
 iya	اي	
 iyakah	اياکه	
 j	جيه	
+j-jika	ج‍-جک	
 janitoor	جانيتور	
 java	جاۏا	
 javascript	جاۏاسکريڤ‌ت	
@@ -164,11 +171,12 @@ kafka	کفکا
 kafu	کافو	
 kagari	کاݢاري	
 kana	کانا	
-kaneki	کانيکي	کانێکي
+kaneki	کانيکي	کانيٚکي
 karasuki	کاراسوکي	
 karok	کاروک	
 kazuhiko	کازوهيکو	
 kazuki	کازوکي	
+ke-	ک-	
 ken	کين	
 kenny	کيني	
 kentucky	کينتاکي	
@@ -189,11 +197,14 @@ laila	ليلا
 latifa	لاتيفا	
 layla	ليلا	
 lazada	لازادا	
+lelendir	للندير	
+lendir	لندير	
+lilac	لايليک	
 lili	ليلي	
 lily	ليلي	
 linus	لاينس	
 linux	لينيک‌س	
-liselotte	ليزيلوتي	ليزێلۆتّێ
+liselotte	ليزيلوتي	ليزيٚلوٚتّيٚ
 lmao	لماو	
 lmao	ايل.عيم.أي.او.	
 loid	لوٴيد	
@@ -254,12 +265,14 @@ ningguang	نيڠݢواڠ
 nino	نينو	
 nirnyawa	نيرڽاوا	
 no	نو	
-nouzen	نوزين	نۆزێن
+nouzen	نوزين	نوٚزيٚن
+nuruddin	نورالدين	
 o	او	
 obs	او.بي.ايس.	
 ochobot	اوچوبوت	
 ocobot	اوچوبوت	
 offset	اوفسيت	
+ok	اوکي	
 okabe	اوکابي	
 orsted	اورستيد	
 osu	اوسو	
@@ -278,6 +291,9 @@ piglin	ڤيݢلين
 planetminecraft	ڤلينيت‌ماٴينکرف‌ت	
 planisfera	ڤلانيسفيرا	
 planisphere	ڤلانيسفير	
+play	ڤلي	ڤليٚ
+plays	ڤليز	ڤليٚز
+plays	ڤليئيز	ڤليٚئيز
 poppy	ڤوڤي	
 prismarin	ڤريسمارين	
 prismarine	ڤريسمارين	
@@ -308,9 +324,11 @@ roxi	روکسي
 roxy	روکشي	
 rubika	روبيکا	
 rudeus	روديوس	
+rudeus-sama	روديوس-ساما	
 ruijerd	رويجرد	
 rust	رس	
 s	ايس	
+s-saya	س‍-ساي	
 samsung	سمسوڠ	
 sara	سارا	
 satomi	ساتومي	
@@ -318,6 +336,7 @@ satou	ساتو
 satria	ساتريا	
 satsuki	ساتسوکي	
 sauros	ساوروس	
+sauros-sama	ساوروس-ساما	
 scarecro	سکيرکرو	
 scarlet	سکرلت	
 sculk	سکل‌ک	
@@ -413,6 +432,8 @@ wysi	727
 x	ايک‌س	
 xiaomi	شياومي	
 y	واي	
+y-ya	ي‍-يا	
+yae	ياٴي	
 yagumo	ياݢومو	
 yaya	يايا	
 ye	ي	
@@ -424,9 +445,9 @@ yuki	يوکي
 yumi	يومي	
 yun	يون	
 z	زيد	
+za’ba	زعبا	
 zaba	زابا	
 zaba	زعبا	
-za’ba	زعبا	
 zen	زين	
 zenith	زينيث	
 zoglin	زوݢلين	
